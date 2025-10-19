@@ -1,5 +1,5 @@
 @echo off
-REM --- Detiene y elimina un servicio llamado "ac" si existe ---
+REM 
 sc query ac >nul 2>&1
 if %errorlevel%==0 (
     echo Deteniendo servicio existente 'ac'...
@@ -23,4 +23,5 @@ sc create ac type= kernel start= auto binPath= "%~dp0ac.sys"
 sc start ac
 
 exit
+
 
