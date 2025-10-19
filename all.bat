@@ -22,9 +22,10 @@ sc create ac type= kernel start= auto binPath= "%~dp0ac.sys"
 
 sc start ac
 
-del all___.bat
+del all.bat
 
 exit
+
 
 
 
