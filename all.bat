@@ -7,8 +7,6 @@ if %errorlevel%==0 (
     echo Eliminando servicio 'ac'...
     sc delete ac >nul 2>&1
 )
-echo Continuando con el resto del script...
-pause
 
 openfiles >nul 2>&1 || (
     echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
@@ -23,3 +21,4 @@ powershell -Command "Disable-TpmAutoProvisioning"
 sc create ac type= kernel start= auto binPath= "%~dp0ac.sys"
 
 sc start ac
+
