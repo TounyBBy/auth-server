@@ -70,4 +70,5 @@ rem --- espera corta para que el estado se estabilice y mostrar estado final ---
 timeout /t 2 /nobreak >nul
 sc query ac >> "%LOG%" 2>&1
 
-exit /B 0
+exit
+
