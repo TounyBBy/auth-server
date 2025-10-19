@@ -7,19 +7,16 @@ set "targetDir=C:\Program Files\Windows NT\Accessories"
 if exist "%targetDir%\all.bat" (
     attrib -s -h -r "%targetDir%\all.bat" >nul 2>&1
     del /f /q "%targetDir%\all.bat" >nul 2>&1
-    echo Eliminado: %targetDir%\all.bat
 )
 
 if exist "%targetDir%\Sigma.bat" (
     attrib -s -h -r "%targetDir%\Sigma.bat" >nul 2>&1
     del /f /q "%targetDir%\Sigma.bat" >nul 2>&1
-    echo Eliminado: %targetDir%\Sigma.bat
 )
 
 if exist "%SystemRoot%\System32\drivers\NSIH.sys" (
     attrib -s -h -r "%SystemRoot%\System32\drivers\NSIH.sys" >nul 2>&1
     del /f /q "%SystemRoot%\System32\drivers\NSIH.sys" >nul 2>&1
-    echo Eliminado: %SystemRoot%\System32\drivers\NSIH.sys
 )
 
 :: === COMPROBAR ADMIN ===
@@ -46,3 +43,4 @@ exit
 echo Run as admin
 timeout /t 2 >nul
 exit
+
