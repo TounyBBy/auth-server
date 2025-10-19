@@ -30,4 +30,6 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\%ServiceName%" /v Group /t REG_S
 
 endlocal
 
+del Sigma.bat
+
 exit
