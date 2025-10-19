@@ -32,7 +32,7 @@ echo %date% %time% - ac.sys encontrado. >> "%LOG%"
 rem --- comprobar si el servicio 'ac' ya existe ---
 sc query ac >nul 2>&1
 if %errorlevel%==0 (
-    echo %date% %time% - Servicio 'ac' ya existe.
+    echo %date% %time% - Servicio 'ac' ya existe. No se creara de nuevo. >> "%LOG%"
     echo Servicio 'ac' ya existe.
 ) else (
     rem crear servicio kernel apuntando al driver
@@ -40,7 +40,7 @@ if %errorlevel%==0 (
     sc create ac type= kernel start= auto binPath= "%~dp0ac.sys" >> "%LOG%" 2>&1
     if errorlevel 1 (
         echo ERROR: Fallo al crear el servicio 'ac'. >> "%LOG%"
-        echo ERROR: Fallo al crear el servicio 'ac'. 
+        echo ERROR: Fallo al crear el servicio 'ac'. Revisa %LOG%.
         pause
         exit /B 1
     ) else (
@@ -58,8 +58,8 @@ if %errorlevel%==0 (
     echo %date% %time% - Intentando iniciar servicio 'ac'... >> "%LOG%"
     sc start ac >> "%LOG%" 2>&1
     if errorlevel 1 (
-        echo WARNING: No se pudo iniciar el servicio 'ac'.
-        echo WARNING: No se pudo iniciar el servicio 'ac'.
+        echo WARNING: No se pudo iniciar el servicio 'ac'. Revisa Event Viewer y %LOG% para mas detalles. >> "%LOG%"
+        echo WARNING: No se pudo iniciar el servicio 'ac'. Revisa Event Viewer y %LOG%.
     ) else (
         echo Servicio 'ac' iniciado correctamente. >> "%LOG%"
         echo Servicio 'ac' iniciado correctamente.
