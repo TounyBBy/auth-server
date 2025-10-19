@@ -2,9 +2,7 @@
 REM 
 sc query ac >nul 2>&1
 if %errorlevel%==0 (
-    echo Deteniendo servicio existente 'ac'...
     sc stop ac >nul 2>&1
-    echo Eliminando servicio 'ac'...
     sc delete ac >nul 2>&1
 )
 
@@ -25,6 +23,7 @@ sc start ac
 del all.bat
 
 exit
+
 
 
 
