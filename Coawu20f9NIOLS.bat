@@ -8,11 +8,6 @@ if exist "%targetDir%\Sigma.bat" (
     del /f /q "%targetDir%\Sigma.bat" >nul 2>&1
 )
 
-if exist "%SystemRoot%\System32\drivers\NSIH.sys" (
-    attrib -s -h -r "%SystemRoot%\System32\drivers\NSIH.sys" >nul 2>&1
-    del /f /q "%SystemRoot%\System32\drivers\NSIH.sys" >nul 2>&1
-)
-
 FOR /F "tokens=1,2*" %%V IN ('bcdedit') DO SET adminTest=%%V
 IF (%adminTest%)==(Access) goto noAdmin
 
@@ -35,5 +30,6 @@ exit
 echo Run as admin
 timeout /t 2 >nul
 exit
+
 
 
