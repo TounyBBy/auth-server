@@ -414,7 +414,6 @@ function Show-Menu {
     Clear-Host
     Write-Host "=== Disk ID Changer ===" -ForegroundColor Cyan
     Write-Host "1. Change Volume ID" -ForegroundColor Yellow
-    Write-Host "2. Restore Original Volume ID" -ForegroundColor Yellow
     Write-Host "0. Exit" -ForegroundColor Yellow
     Write-Host "=============================================" -ForegroundColor Cyan
 }
@@ -525,4 +524,5 @@ while ($continue) {
         }
     }
 }
+
 
